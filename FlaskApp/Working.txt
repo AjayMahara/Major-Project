@@ -1,0 +1,51 @@
+Flask App (app.py):
+Initialization:
+
+You create an instance of the Flask app using Flask(__name__).
+Rate Limiter Integration:
+
+You import the RateLimiter class from the rate_limiter module.
+You create an instance of the RateLimiter class (rate_limiter) with a limit of 5 requests per 60 seconds.
+Initialization of Rate Limiter:
+
+You call the initialize method of the rate_limiter instance to initialize the rate limiter.
+Route Definition:
+
+You define a route (/) using the @app.route('/') decorator.
+Inside the route, you use the allow_request method of the rate_limiter instance to check if a request is allowed.
+Response Handling:
+
+If the request is allowed, you render the 'index.html' template.
+If the rate limit is exceeded, you return a JSON response with a 429 status code (Too Many Requests).
+If there's a runtime error (e.g., rate limiter not initialized), you return a JSON response with a 500 status code (Internal Server Error).
+Run the App:
+
+The app runs using app.run(debug=True).
+
+
+
+Rate Limiter Module (rate_limiter.py):
+RateLimiter Class:
+
+You define a RateLimiter class with attributes for request limit, window size, request queue, and a lock for thread safety.
+Initialization Method:
+
+The initialize method clears the request queue and sets the is_initialized flag to True.
+Allow Request Method:
+
+The allow_request method checks if the rate limiter is initialized.
+It uses a lock to make critical sections atomic.
+It removes old requests from the queue, checks the limit, and either allows or denies the request.
+Usage Summary:
+Initialization Order:
+
+Import the RateLimiter class in your Flask app.
+Create an instance of the RateLimiter class.
+Call the initialize method to initialize the rate limiter.
+Route Handling:
+
+In your route, use the allow_request method to check if a request is allowed.
+Return appropriate responses based on whether the request is allowed or if there's an error.
+Run the Flask App:
+
+Run your Flask app (app.run(debug=True)).

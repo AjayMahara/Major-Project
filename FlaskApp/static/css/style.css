@@ -1,0 +1,84 @@
+.flex-container{
+    display: flex;
+    flex-direction: column;
+}
+#head{
+    display: flex;
+    flex-direction: column;
+    height: 840px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+#head:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: url("images/background.jpg") no-repeat center;
+    height: 800px;
+    width: 100%;
+    z-index: -1;
+    opacity: .8;
+}
+section{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.header1{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 30%;
+    right: 30%;
+}
+.header1 h1{
+    color: white;
+    font-size: 4rem;
+}
+.header1 p{
+    font-size: 2rem;
+    color: white;
+}
+.headings{
+    font-family:century;
+    font-size: 3rem;
+    text-align: center;
+    margin: 40px 0px;
+}
+.pic{
+    display: flex;
+}
+.pic img{
+    width: 600px;
+    height: 500px;
+    padding: 10px;
+}
+.about{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    padding: 10px;
+}
+.about h2{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+.about p{
+    font-size: 20px;
+}
+#hawa, #india, #jantar{
+    display: flex;
+    flex-direction: column;
+}
+#golden, #mysore, #sun{
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0,0,0,0.9);
+    color: white;
+}
+#foot p{
+    font-size: 1.7rem;
+    padding: 3px;
+    text-align: center;
+}
